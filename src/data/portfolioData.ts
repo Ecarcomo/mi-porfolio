@@ -127,7 +127,7 @@ export const educationData = [
 ];
 
 export const contactData = {
-  email: "emmanuel.carcomo@email.com",
+  email: "emmanuelcarcomo@gmail.com",
   phone: "+54 9 11 3765-8523",
   whatsapp: "5491137658523",
   linkedin: "https://www.linkedin.com/in/emmanuel-carcomo-2346a8113/",
