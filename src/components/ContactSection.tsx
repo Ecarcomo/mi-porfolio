@@ -41,7 +41,7 @@ const ContactSection: React.FC = () => {
       const response = await fetch('/', { // Guarda la respuesta en una variable
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString(),
+        body: new URLSearchParams(Object.fromEntries(new FormData(form))).toString(),
       });
   
       console.log('Fetch completado.'); // Esta línea siempre se ejecutará si hay una respuesta (aunque sea 404)
