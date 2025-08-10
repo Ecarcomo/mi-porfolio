@@ -43,7 +43,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900/90 backdrop-blur-md border-b border-cyan-500/30' : 'bg-transparent'
+      isScrolled || isMenuOpen ? 'bg-gray-900/90 backdrop-blur-md border-b border-cyan-500/30' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          isMenuOpen ? 'max-h-100 opacity-100' : 'max-h-0 opacity-0'
         }`}>
           <nav className="pt-4 pb-2 space-y-2">
             {menuItems.map((item) => (
@@ -113,7 +113,7 @@ const Header: React.FC = () => {
             ))}
             <button
               onClick={handleDownloadCV}
-              className="flex items-center space-x-2 w-full px-4 py-2 mt-4 bg-gradient-to-r from-pink-500 to-cyan-400 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+              className="flex items-center space-x-2 w-full px-4 py-2 mt-4  bg-gradient-to-r from-pink-500 to-cyan-400 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
             >
               <Download size={16} />
               <span>{language === 'es' ? 'Descargar CV' : 'Download CV'}</span>
