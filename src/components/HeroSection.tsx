@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
           <img 
             src="/profile.png" 
             alt="Emmanuel Carcomo" 
-            className="h-full w-auto object-cover opacity-70 transform scale-110 origin-top [mask-image:linear-gradient(to_top,transparent_0%,transparent_0%,black_80%,black_100%)] [mask-repeat:no-repeat] [mask-size:100%_100%] "
+            className="h-full w-auto object-cover opacity-70  brightness-200 transform scale-110 origin-top [mask-image:linear-gradient(to_top,transparent_0%,transparent_0%,black_80%,black_100%)] [mask-repeat:no-repeat] [mask-size:100%_100%] "
           />
           
         </div>
@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
                 className="group px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
               >
                 <MessageCircle size={20} />
-                <span>{language === 'es' ? 'Contactar' : 'Contact'}</span>
+                <span>{language === 'es' ? 'Contactarme' : 'Contact me'}</span>
               </button>
               
               <button

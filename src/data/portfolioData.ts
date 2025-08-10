@@ -74,15 +74,17 @@ export const projectsData = [
 ];
 
 export const skillsData = {
-  hard: [
+    hard: [
     { name: "React", icon: "⚛️" },
+    { name: "Express.js", icon: "⚡" },
     { name: "Node.js", icon: "🟢" },
     { name: "TypeScript", icon: "🔷" },
     { name: "Python", icon: "🐍" },
     { name: "Docker", icon: "🐳" },
     { name: "AWS", icon: "☁️" },
     { name: "MongoDB", icon: "🍃" },
-    { name: "PostgreSQL", icon: "🐘" }
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "Oracle PL/SQL", icon: "💻" },
   ],
   soft: [
     { name: "Comunicación", nameEn: "Communication", icon: "💬" },
