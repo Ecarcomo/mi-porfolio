@@ -7,17 +7,18 @@ export const experienceData = [
     periodEn: "2022 - present",
     description: "Liderazgo de equipo de desarrollo y arquitectura de soluciones web",
     descriptionEn: "Team leadership and web solutions architecture",
-    technologies: ["React", "Node.js", "TypeScript", "AWS"]
+    technologies: ["C/C++", "HTML 5", "CSS 3", "JavaScript", "Oracle PL/SQL", "MS SQL Server"]
   },
   {
     id: 2,
     company: "DevAds",
+    link: "https://devads.cloud",
     position: "Fundador, Desarrollo Web y Publicidad Online",
     positionEn: "Founder, Web Development and Online Advertising",
     period: "2017 - 2022",
     description: "Desarrollo de soluciones web personalizadas y estrategias de marketing digital",
     descriptionEn: "Custom web solutions development and digital marketing strategies",
-    technologies: ["WordPress", "PHP", "JavaScript", "Google Ads"]
+    technologies: ["WordPress","Node.js","Express","TypeScript","Docker","Heroku","AWS", "PHP", "Google Ads" ,"Meta Ads","..."]
   }
 ];
 
@@ -40,18 +41,18 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
-    titleEn: "Dashboard Analytics",
-    description: "Dashboard interactivo para análisis de datos en tiempo real",
-    descriptionEn: "Interactive dashboard for real-time data analysis",
-    image: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpg?auto=compress&cs=tinysrgb&w=800",
-    technologies: ["Vue.js", "D3.js", "Python", "PostgreSQL"],
-    year: "2023",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Sabore.ar Menu Digital",
+    titleEn: "Sabore.ar Digital Menu",
+    description: "Menu digital para restaurantes, sincronizado con google sheets",
+    descriptionEn: "Digital menu for restaurants, synchronized with google sheets",
+    image: "https://images.pexels.com/photos/5077068/pexels-photo-5077068.jpeg?auto=compress&cs=tinysrgb&w=800",
+    technologies: ["React", "Mongo DB", "ExpressJS", "Heroku"],
+    year: "2024",
+    github: "https://github.com/Ecarcomo/Menu-Digital",
+    demo: "https://sabore.ar/",
     gallery: [
-      "https://images.pexels.com/photos/590020/pexels-photo-590020.jpg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/265087/pexels-photo-265087.jpg?auto=compress&cs=tinysrgb&w=800"
+      "https://images.pexels.com/photos/13432289/pexels-photo-13432289.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/5077068/pexels-photo-5077068.jpeg?auto=compress&cs=tinysrgb&w=800"
     ]
   },
   {
@@ -60,13 +61,13 @@ export const projectsData = [
     titleEn: "Fitness Mobile App",
     description: "Aplicación móvil para seguimiento de rutinas de ejercicio",
     descriptionEn: "Mobile app for workout routine tracking",
-    image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.pexels.com/photos/6298479/pexels-photo-6298479.jpeg?auto=compress&cs=tinysrgb&w=800",
     technologies: ["React Native", "Firebase", "Redux"],
     year: "2022",
     github: "https://github.com",
     demo: "https://demo.com",
     gallery: [
-      "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/6298479/pexels-photo-6298479.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=800"
     ]
   }
@@ -127,6 +128,6 @@ export const contactData = {
   email: "emmanuel.carcomo@email.com",
   phone: "+54 9 11 3765-8523",
   whatsapp: "5491137658523",
-  linkedin: "https://linkedin.com/in/emmanuelcarcomo",
-  github: "https://github.com/emmanuelcarcomo"
+  linkedin: "https://www.linkedin.com/in/emmanuel-carcomo-2346a8113/",
+  github: "https://github.com/Ecarcomo"
 };

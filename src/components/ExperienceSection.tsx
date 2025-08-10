@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, Code } from 'lucide-react';
+import { Calendar, MapPin, Code, ExternalLink  } from 'lucide-react';
 import { useAppContext } from '../contexts/AppContext';
 import { experienceData } from '../data/portfolioData';
 
@@ -54,7 +54,11 @@ const ExperienceSection: React.FC = () => {
                       </div>
 
                       <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                        {experience.company}
+                        {experience.link ? 
+                        <>
+                          <a href={experience.link} className="flex items-center" target="_blank" rel="noopener noreferrer">{experience.company}<ExternalLink className="w-4 h-4 ml-1" /></a> 
+                        </>
+                        : experience.company}
                       </h3>
                       
                       <h4 className="text-lg font-semibold text-pink-400 mb-4">
