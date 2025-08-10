@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Send, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Send, MessageCircle ,CheckCircle, CircleSlash2 } from 'lucide-react';
 import { useAppContext } from '../contexts/AppContext';
 import { contactData } from '../data/portfolioData';
 
@@ -10,6 +10,9 @@ const ContactSection: React.FC = () => {
     email: '',
     message: ''
   });
+  const [isSubmitted, setIsSubmitted]= useState(false);
+  const [submitMessage, setSubmitMessage] = useState(''); // Para mensajes de éxito/error
+  const  [submitResponse, setSubmitResponse] = useState(''); // Para respuestas de Netlify
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,13 +22,55 @@ const ContactSection: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle form submission
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-    alert(language === 'es' ? 'Mensaje enviado correctamente!' : 'Message sent successfully!');
+
+
+    setIsSubmitted(false); // Reinicia el estado de envío
+    setSubmitMessage(''); // Reinicia el mensaje
+    setSubmitResponse('');
+   
+     // Para Netlify Forms, los datos deben enviarse como 'application/x-www-form-urlencoded'
+    // o 'multipart/form-data'. FormData es ideal para esto.
+    const form = e.target as HTMLFormElement; // Asegura que 'form' sea de tipo HTMLFormElement
+    //const data = new FormData(form);
+
+    try {
+
+      console.log('Intentando hacer fetch...'); // <-- Punto de control 3
+      const response = await fetch('/', { // Guarda la respuesta en una variable
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString(),
+      });
+  
+      console.log('Fetch completado.'); // Esta línea siempre se ejecutará si hay una respuesta (aunque sea 404)
+      setIsSubmitted(true);
+
+      setTimeout(() => {
+        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitted(false);
+        setSubmitMessage('');
+        setSubmitResponse('');
+      }, 5000);
+      
+      // ¡Aquí está la clave! Verifica si la respuesta es exitosa (código 2xx)
+      if (!response.ok) {
+        // Si la respuesta no es 'ok' (es un 4xx o 5xx), lanzamos un error
+        // para que el bloque 'catch' lo maneje.
+        const errorText = await response.text(); // O response.json() si esperas JSON
+        throw new Error(`Error de HTTP: ${response.status} - ${errorText}`);
+      }
+      setSubmitMessage(language === 'es' ? 'Tu mansaje fué enviado con éxito, te responderé dentro de las 24hs.' : 'Your message was sent successfully, I will respond within 24 hours.');
+      setSubmitResponse('ok');
+  
+    } catch {
+      setSubmitResponse('error');
+      setSubmitMessage(language === 'es' ? 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.' : 'There was an error sending your message. Please try again later.');
+      console.error(language === 'es' ? 'Error al enviar el formulario' : 'Error sending the form');
+    }
+
+
   };
 
   const handleWhatsApp = () => {
@@ -67,7 +112,35 @@ const ContactSection: React.FC = () => {
                 {language === 'es' ? 'Envíame un mensaje' : 'Send me a message'}
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                    {submitResponse == 'ok' ? 
+                      <>
+                        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                        <h4 className="text-xl font-semibold text-gray-800 mb-2">
+                          {submitMessage}
+                        </h4>
+                        <p className="text-gray-600">
+                          Gracias por tu mensaje.
+                        </p>
+                      </>
+                    :
+                      <>
+                        <CircleSlash2  className="w-16 h-16 text-red-500 mx-auto mb-4" />
+                        <h4 className="text-xl font-semibold text-gray-800 mb-2">
+                          {submitMessage}
+                        </h4>
+                        <p className="text-gray-600">
+                          Disculpa la molestia, puedes contactarme vía WhatsApp tambien.
+                        </p>
+                      </>
+                    }
+                </div>
+              ) : (
+
+              <form onSubmit={handleSubmit} className="space-y-6"  name="contact" data-netlify="true" >
+                {/* Campo oculto requerido por Netlify para identificar el formulario */}
+                <input type="hidden" name="form-name" value="contact" />
                 <div>
                   <label htmlFor="name" className="block text-gray-300 mb-2">
                     {language === 'es' ? 'Nombre' : 'Name'}
@@ -124,6 +197,8 @@ const ContactSection: React.FC = () => {
                   <span>{language === 'es' ? 'Enviar mensaje' : 'Send message'}</span>
                 </button>
               </form>
+            )}
+
             </div>
 
             {/* Contact Info */}
