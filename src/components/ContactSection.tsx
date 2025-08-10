@@ -138,7 +138,7 @@ const ContactSection: React.FC = () => {
                 </div>
               ) : (
 
-              <form onSubmit={handleSubmit} className="space-y-6"  name="contact" data-netlify="true" >
+              <form onSubmit={handleSubmit} className="space-y-6"  name="contact" netlify >
                 {/* Campo oculto requerido por Netlify para identificar el formulario */}
                 <input type="hidden" name="form-name" value="contact" />
                 <div>
