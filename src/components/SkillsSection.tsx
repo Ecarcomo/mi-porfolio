@@ -5,6 +5,7 @@ import { skillsData } from '../data/portfolioData';
 
 const SkillsSection: React.FC = () => {
   const { language } = useAppContext();
+  const categorias = [...new Set(skillsData.hard.map(item => item.category))];
 
   return (
     <section id="skills" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
@@ -36,18 +37,28 @@ const SkillsSection: React.FC = () => {
                 </h3>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {skillsData.hard.map((skill, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition-all duration-300 group"
-                  >
-                    <span className="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300">
-                      {skill.icon}
-                    </span>
-                    <span className="text-white font-medium group-hover:text-cyan-400 transition-colors duration-300">
-                      {skill.name}
-                    </span>
+              <div className="grid grid-cols-1 gap-4">
+              {categorias.map((cat,i)=> (
+                  <div>
+                    <h2>{cat}</h2>
+                    <div className='flex w-full flex-wrap gap-2'>
+                    {
+                      skillsData.hard.map((skill, index) => {
+                        if(skill.category === cat)
+                        return(<div
+                                  key={index}
+                                  className="flex items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition-all duration-300 group"
+                                >
+                                  <span className="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300">
+                                    {skill.icon}
+                                  </span>
+                                  <span className="text-white font-medium group-hover:text-cyan-400 transition-colors duration-300">
+                                    {skill.name}
+                                  </span>
+                                </div>);
+                      })
+                    }
+                    </div>
                   </div>
                 ))}
               </div>
