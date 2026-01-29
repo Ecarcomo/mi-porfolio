@@ -76,19 +76,29 @@ export const projectsData = [
 export const skillsData = {
     hard: [
     { category:"Tecnologías de Desarrollo", name: "React + Vite", icon: "⚛️" },
-    { category:"Tecnologías de Desarrollo", name: "Express.js", icon: "⚡" },
-    { category:"Tecnologías de Desarrollo", name: "Node.js", icon: "🟢" },
     { category:"Tecnologías de Desarrollo", name: "TypeScript", icon: "🔷" },
+    { category:"Tecnologías de Desarrollo", name: "HTML5", icon: "📄" },
+    { category:"Tecnologías de Desarrollo", name: "CSS3", icon: "🎨" },
+    { category:"Tecnologías de Desarrollo", name: "TailwindCSS", icon: "💨" },
+    { category:"Tecnologías de Desarrollo", name: "Node.js", icon: "🟢" },
+    { category:"Tecnologías de Desarrollo", name: "NestJS", icon: "🐈" },
+    { category:"Tecnologías de Desarrollo", name: "Express.js", icon: "⚡" },
     { category:"Tecnologías de Desarrollo", name: "Python", icon: "🐍" },
+    { category:"Tecnologías de Desarrollo", name: "Java", icon: "☕" },
+    { category:"Tecnologías de Desarrollo", name: "C / C++", icon: "⚙️" },
     { category:"Tecnologías de Desarrollo", name: "PHP", icon: "🅿️" },
     { category:"Cloud", name: "AWS", icon: "☁️" },
     { category:"Cloud", name: "Firebase", icon: "🔥" },
     { category:"Cloud", name: "Meta Cloud", icon: "🔵" },
+    { category:"Cloud", name: "Google Cloud", icon: "🔶" },
     { category:"Base De Datos", name: "MongoDB", icon: "🍃" },
+    { category:"Base De Datos", name: "MySQL", icon: "🐬" },
     { category:"Base De Datos", name: "Supabase", icon: "🟢" },
     { category:"Base De Datos", name: "PostgreSQL", icon: "🐘" },
     { category:"Base De Datos", name: "Oracle PL/SQL", icon: "💻" },
-    { category:"DevOps / Automatización", name: "N8n Workflows", icon: "" },
+    { category:"Testing", name: "Jest", icon: "✅" },
+    { category:"DevOps / Automatización", name: "Git", icon: "📦" },
+    { category:"DevOps / Automatización", name: "N8n Workflows", icon: "🔄" },
     { category:"DevOps / Automatización", name: "Docker", icon: "🐳" },
     { category:"DevOps / Automatización", name: "LLMs", icon: "🧠" },
     { category:"Deployment / Hosting", name: "Netlify", icon: "" },
@@ -102,8 +112,11 @@ export const skillsData = {
     { name: "Creatividad", nameEn: "Creativity", icon: "🎨" },
     { name: "Trabajo en equipo", nameEn: "Teamwork", icon: "👥" },
     { name: "Liderazgo", nameEn: "Leadership", icon: "👑" },
+    { name: "Proactividad", nameEn: "Proactivity", icon: "🚀" },
     { name: "Resolución de problemas", nameEn: "Problem Solving", icon: "🧩" },
-    { name: "Adaptabilidad", nameEn: "Adaptability", icon: "🔄" }
+    { name: "Adaptabilidad", nameEn: "Adaptability", icon: "🔄" },
+    { name: "Gestión del tiempo", nameEn: "Time Management", icon: "⏱️" },
+    { name: "Metodologías Ágiles", nameEn: "Agile Methodologies", icon: "📋" }
   ]
 };
 
