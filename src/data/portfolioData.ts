@@ -57,19 +57,19 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "App Móvil Fitness",
-    titleEn: "Fitness Mobile App",
-    description: "Aplicación móvil para seguimiento de rutinas de ejercicio",
-    descriptionEn: "Mobile app for workout routine tracking",
-    image: "https://images.pexels.com/photos/6298479/pexels-photo-6298479.jpeg?auto=compress&cs=tinysrgb&w=800",
-    technologies: ["React Native", "Firebase", "Redux"],
-    year: "2022",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Calistenia TrackingApp",
+    titleEn: "Calistenia TrackingApp",
+    description: "Aplicación para seguimiento de progreso en calistenia",
+    descriptionEn: "Application for tracking progress in calistenia",
+    image: "https://images.pexels.com/photos/4803935/pexels-photo-4803935.jpeg?auto=compress&cs=tinysrgb&w=800",
+    technologies: ["React JS", "Supabase", "TailwindCSS"],
+    year: "2026",
+    github: "https://github.com/DevAds-webmaster/calisteniapp",
+    demo: "https://calisteniapp.netlify.app/",
     gallery: [
-      "https://images.pexels.com/photos/6298479/pexels-photo-6298479.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=800"
-    ]
+      "https://images.pexels.com/photos/4803935/pexels-photo-4803935.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/4803716/pexels-photo-4803716.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ] 
   }
 ];
 
